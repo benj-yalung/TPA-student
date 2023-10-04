@@ -1,0 +1,28 @@
+@import url('./colors.css');
+
+/* NAV */
+.navbar-collapse {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-nav {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.menu-text {
+  color: var(--menu-text-color) !important;
+}
+
+.menu-text:hover {
+  color: var(--active-color) !important;
+}
+
+.nav-logo {
+  height: 80px;
+}
