@@ -1,7 +1,6 @@
 .main-wrapper{
-    display: grid;
-    gap: .1rem 0;
-    grid-template-rows: 86px calc(140vh);
+    display: flex;
+    flex-direction: column;
 }
 
 .chat-page{
@@ -9,12 +8,11 @@
     gap: 5px;
 }
 
-.inbox__wrapper{
+.inbox-wrapper{
+    max-width: 450px;
+    padding: 2rem;
     background-color: #F7F9FA;
-    max-width: 380px;
-    overflow: hidden;
-    padding: 2rem 2rem 4rem;
-    width: 100%;
+    height: 100%;
 }
 
 .inbox-text-btn{
@@ -22,13 +20,11 @@
     justify-content: space-between;
 }
 
-.inbox__btn{
+.inbox-btn{
     padding: .5rem;
     background: none;
     border: 1px solid #ccc;
     box-shadow: 2px 3px 21px -1px rgba(204,204,204,0.51) inset;
-    height: 2rem;
-    width: 2rem;
     -webkit-box-shadow: 2px 3px 21px -1px rgba(204,204,204,0.51) inset;
     -moz-box-shadow: 2px 3px 21px -1px rgba(204,204,204,0.51) inset;
 }
@@ -37,26 +33,23 @@
     height: 100%;
 }
 
-.inbox__tabs-inner{
+.inbox-tabs-inner{
     height: 90%;
     overflow-y: scroll;
     padding-right: 1rem;
 }
 
-.inbox__tabs-inner::-webkit-scrollbar {
-    display: none;
-}
-
-.inbox__tabs-menu{
+.inbox-tabs-menu{
     background-color: #dfdfdf;
     margin: 1rem 0;
     margin-bottom: 0;
+    padding: .5rem .4rem;
     display: flex;
     justify-content: space-around;
     border-radius: 15px;
 }
 
-.inbox__tabs-menu a{
+.inbox-tabs-menu a{
     padding: .5rem;
     width: 100%;
     text-align: center;
@@ -66,7 +59,7 @@
     color: #5b5a5a;
 }
 
-.inbox__tabs-menu a.active{
+.inbox-tabs-menu a.active{
     background-color: #fff;
 }
 
@@ -79,7 +72,7 @@
 }
 
 
-.inbox__msgNew-item,
+.inbox-msgNew-item,
 .inbox-msg-item{
     margin-top: 1rem;
     padding: 1rem;
@@ -91,7 +84,7 @@
     cursor: pointer;
 }
 
-.inbox__msgNew-item:hover,
+.inbox-msgNew-item:hover,
 .inbox-msg-item:hover{
     background-color: #718ED4;
     border-radius: 20px;
@@ -103,26 +96,24 @@
     border-radius: 0;
 }
 
-.inbox__msgNew-item-img img{
-    width: 4rem;
+.inbox-msgNew-item-img img{
+    width: 80px;
 }
 
-.inbox__msgNew-item-info{
-    margin-left: 1.5rem;
+.inbox-msgNew-item-info{
+    margin-left: 2rem;
 }
 
-.inbox__msgNew-item-info__pref{
+.inbox-msgNew-item-info__pref{
     color: #5b5a5a;
-    font-size: .8rem;
 }
 
-.inbox__msgNew-item-info__msg{
+.inbox-msgNew-item-info__msg{
     color: #5b5a5a;
     font-weight: 600;
-    font-size: .85rem;
 }
 
-.inbox__msgNew-item-counter{
+.inbox-msgNew-item-counter{
     height: 20px;
     width: 20px;
     padding: 1rem;
@@ -139,9 +130,31 @@
     height: 100vh;
 }
 
+.chat-page{
+    flex: 1 1 auto;
+    height: 90vh;
+    box-sizing: border-box;
+}
+
+.message-wrapper{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
 /* message profile */
 
-.msg__profile-settings{
+.msg-profile{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    padding-left: 2.5rem;
+    position: relative;
+}
+
+.msg-profile-settings{
+    position: absolute;
     right: 2.5rem;
     top: .5rem;
     transform: rotate(90deg);
@@ -153,7 +166,14 @@
 }
 
 .msg-profile-info img{
-    height: 4rem;
+    height: 80px;
+}
+
+.msg-profile-info__text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1rem;
 }
 
 .msg-sched-call{
@@ -163,6 +183,7 @@
 
 .msg-sched-call-btn{
     border-radius: 20px;
+    padding: .5rem 2.5rem;
     background-color: #92ADEF;
     color: #fff;
     display: grid;
@@ -183,7 +204,7 @@
 .msg-box{
     display: flex;
     flex-direction: column;
-    padding: 2.5rem 2.5rem 4rem;
+    padding: 2.5rem;
     height: 90%;
     background-color: rgb(247,249,250);
 }
@@ -284,7 +305,7 @@
 }
 
 @media only screen and (max-width: 990px){
-    .message__wrapper{
+    .message-wrapper{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -296,11 +317,11 @@
         place-items: center;
     }
 
-    .inbox__tabs-menu{
+    .inbox-tabs-menu{
         flex-direction: column;
     }
 
-    .inbox__btn{
+    .inbox-btn{
         padding: .2rem;
     }
 
@@ -308,11 +329,11 @@
         max-width: 80%;
     }
 
-    .inbox__msgNew-item-info{
+    .inbox-msgNew-item-info{
         display: none;
     }
 
-    .inbox__wrapper{
+    .inbox-wrapper{
         padding: 1rem;
     }
 
@@ -320,7 +341,7 @@
         order: 1;
     }
 
-    .inbox__msgNew-item, .inbox-msg-item{
+    .inbox-msgNew-item, .inbox-msg-item{
         padding: 0;
     }
 
@@ -329,6 +350,13 @@
         padding: 1rem;
         height: 70%;
         box-sizing: border-box;
+    }
+
+    .msg-profile{
+        padding: 0;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem;
     }
 
     .search-wrapper{
@@ -344,10 +372,11 @@
     }
 
     .msg-sched-call-btn{
+        padding: .5rem;
         font-size: 12px;
     }
     
-    .msg__profile-settings{
+    .msg-profile-settings{
         top: 1.3rem;
     }
 }

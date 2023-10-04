@@ -7,8 +7,8 @@
 .accordion .accordion-item:nth-child(even) {
     background-color: transparent;
 }
-/* .accordion .accordion-item.active {
-
+.accordion .accordion-item.active {
+    box-shadow: 0 0.0625rem 0.9375rem 0 rgba(27, 29, 33, 0.15);
     padding-bottom: 20px;
 }
 .accordion .accordion-item.active .accordion-body {
@@ -16,25 +16,23 @@
 }
 .accordion .accordion-item.active .accordion-header::after {
     transform: rotate(90deg);
-} */
+}
 .accordion .accordion-item:last-child {
     margin-bottom: 0;
 }
 .accordion .accordion-item .accordion-header {
-    
+    padding: 1.5625rem;
     font-size: 1.125rem;
     font-weight: 500;
-        display: flex;
-        justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     position: relative;
     cursor: pointer;
     color: #0F0346;
     font-size: 18px;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
-/* .accordion .accordion-item .accordion-header::after {
+.accordion .accordion-item .accordion-header::after {
     content: "\f105";
     font-size: 2rem;
     font-family: "FontAwesome";
@@ -42,12 +40,12 @@
     right: 1.5rem;
     transition: all 0.3s ease-in-out;
     transform: rotate(0deg);
-} */
-/* .accordion .accordion-item .accordion-body {
+}
+.accordion .accordion-item .accordion-body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
-} */
+}
 .accordion .accordion-item .accordion-body .accordion-body-content {
     padding: 0 1.5rem 1.5rem;
     font-size: 0.875rem;
